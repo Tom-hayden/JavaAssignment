@@ -107,3 +107,7 @@ reference will update the existing customer.
   - I decided to use UUIDs here but this may prove incompatible with any existing list of customers.
 - A good improvement would be to create a batch add endpoint.
 - I used Spring-boot and h2 to allow for a quick and simple setup.
+- For the CSV reader I took the approach to not abort early in the case of a failure. This was because I felt if some of the
+    records were invalid it would be easiest to deal with the ones that had errors afterwards rather than having to idenify the problem
+    records and remove them in order to add the valid ones.
+
