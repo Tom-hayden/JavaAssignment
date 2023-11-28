@@ -15,6 +15,8 @@ public class Application {
         String url = getServiceUrl(args);
         String pathValue = getCSVPath(args);
 
+        if (pathValue.isEmpty()) return;
+
         System.out.printf("Using %s as database service address.\n", url);
 
         URI uri = URI.create(url);
