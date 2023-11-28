@@ -32,8 +32,6 @@ public class CustomerController {
 
     @PostMapping("/customer")
     public ResponseEntity<Customer> addCustomer(@RequestBody Customer customer) {
-        UUID customerRef = UUID.randomUUID();
-        customer.setCustomerRef(customerRef);
 
         Customer savedCustomer = repository.save(customer);
 

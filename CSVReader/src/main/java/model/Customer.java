@@ -1,15 +1,12 @@
-package com.example.h2Database.model;
+package model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.util.Objects;
 import java.util.UUID;
 
-@Entity
 public class Customer {
 
-    @Id
     private UUID customerRef;
     private String customerName;
     private String addressLine1;
@@ -19,7 +16,7 @@ public class Customer {
     private String country;
     private String postcode;
 
-    protected Customer() {}
+    private static final ObjectMapper objectMapper = new ObjectMapper();
 
     public Customer(UUID customerRef, String customerName, String addressLine1, String addressLine2, String town, String county, String country, String postcode) {
         this.customerRef = customerRef;
@@ -96,9 +93,18 @@ public class Customer {
         this.postcode = postcode;
     }
 
+
+    public String toJson() {
+        try {
+            return objectMapper.writeValueAsString(this);
+        } catch (Exception e) {
+            throw new RuntimeException("Error converting model.Customer to JSON", e);
+        }
+    }
+
     @Override
     public String toString() {
-        return "Customer{" +
+        return "model.Customer{" +
                 "customerRef=" + customerRef +
                 ", customerName='" + customerName + '\'' +
                 ", addressLine1='" + addressLine1 + '\'' +

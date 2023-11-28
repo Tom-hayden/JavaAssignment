@@ -3,10 +3,8 @@ package com.example.h2Database.controller;
 import com.example.h2Database.model.Customer;
 import com.example.h2Database.repositories.CustomerRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.ArgumentCaptor;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
@@ -77,7 +75,7 @@ public class CustomerControllerTest {
     }
 
     @Test
-    public void AddCustomer_ignoresUUID() throws Exception {
+    public void AddCustomer() throws Exception {
         UUID customerRef = UUID.fromString("5fc03087-d265-11e7-b8c6-83e29cd24f4c");
         Customer customer = new Customer(
                 customerRef,
@@ -99,12 +97,7 @@ public class CustomerControllerTest {
                         .content(customerJson))
                 .andExpect(status().isCreated());
 
-        verify(repository).save(any(Customer.class));
+        verify(repository).save(customer);
 
-        final ArgumentCaptor<Customer> captor = ArgumentCaptor.forClass(Customer.class);
-        verify(repository).save(captor.capture());
-
-        Customer savedCustomer = captor.getValue();
-        Assertions.assertNotEquals(customerRef, savedCustomer.getCustomerRef());
     }
 }

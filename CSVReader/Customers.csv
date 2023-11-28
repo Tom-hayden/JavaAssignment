@@ -1,0 +1,5 @@
+model.Customer Ref,model.Customer Name,Address Line 1,Address Line 2,Town,County,Country,Postcode
+5fc03087-d265-11e7-b8c6-83e29cd24f4c,John Doe,123 Main Street,Apartment 4B,Cityville,Countyshire,Countryland,12345
+b88a9275-ec01-4e1e-9f64-9a0d1be2b287,Jane Smith,456 Oak Avenue,,Townsville,Stateville,Countrytop,67890
+3e2f5542-6f3b-4dbb-8d57-2a4d9981f9c0,Bob Johnson,789 Pine Road,Suite 7,Metropolis,Countyburg,Stateland,54321
+1234,Error
