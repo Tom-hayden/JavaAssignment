@@ -27,11 +27,13 @@ You will need to run the accompanying `h2Database` project at the same time to c
 You can run the tool from the command line with the following syntax:
 
 ```bash
-   java -jar target/customer-csv-import-tool.jar [-path=<csvPath>] [-url=<serviceUrl>]
+   java -jar target/CSVReader-1.0.jar -path=<csvPath> -url=<serviceUrl>
 ```
 
 * -path=\<csvPath>: Specify the path to the CSV file containing customer data.
 * -url=\<serviceUrl>: Specify the URL of the database service. (Optional, default: http://localhost:8080/customer)
+
+If you don't provide arguments you will be prompted to specify a location for the csv and the default url will be used.
 
 # Notes
 

@@ -1,2 +1,2 @@
-Header is missing or first column header is exactly "model.Customer Ref"
+Header is missing or first column header is exactly "Customer Ref"
 Sending multiple requests will update the customer...

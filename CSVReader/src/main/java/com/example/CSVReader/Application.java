@@ -1,6 +1,6 @@
+package com.example.CSVReader;
 
-
-import utils.PathSanitiser;
+import com.example.CSVReader.utils.PathSanitiser;
 
 import java.io.File;
 import java.net.URI;

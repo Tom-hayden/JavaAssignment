@@ -1,7 +1,6 @@
-package utils;
+package com.example.CSVReader.utils;
 
 import org.junit.jupiter.api.Test;
-import utils.PathSanitiser;
 
 import static org.junit.jupiter.api.Assertions.*;
 

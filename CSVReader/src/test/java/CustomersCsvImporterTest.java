@@ -1,4 +1,6 @@
-import model.Customer;
+import com.example.CSVReader.CustomerCsvImporter;
+import com.example.CSVReader.CustomerRestClient;
+import com.example.CSVReader.model.Customer;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;

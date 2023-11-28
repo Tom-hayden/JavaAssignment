@@ -1,6 +1,8 @@
+package com.example.CSVReader;
+
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
-import model.Customer;
+import com.example.CSVReader.model.Customer;
 
 
 import java.io.FileReader;
@@ -35,7 +37,7 @@ public class CustomerCsvImporter {
                     } else {
                         errors.add(
                                 String.format(
-                                "model.Customer Ref: %s, Error: Could not connect to database. Response code: %d",
+                                "Customer Ref: %s, Error: Could not connect to database. Response code: %d",
                                         customer.getCustomerRef().toString(),
                                         responseCode
                         ));
@@ -44,7 +46,7 @@ public class CustomerCsvImporter {
                     if (customer == null) {
                         errors.add(String.format("Could not create customer with Id: %s", nextLine[0]));
                     } else {
-                        errors.add(String.format( "model.Customer Ref: %s, Error: %s",
+                        errors.add(String.format( "Customer Ref: %s, Error: %s",
                                 customer.getCustomerRef().toString(), e));
                     }
                 }
@@ -61,7 +63,7 @@ public class CustomerCsvImporter {
     private void skipHeader(CSVReader reader) throws IOException {
         String[] nextLine;
         if ((nextLine = reader.peek()) != null) {
-            if (nextLine[0].equals("model.Customer Ref")) {
+            if (nextLine[0].equals("Customer Ref")) {
                 System.out.println("CSV Header detected. Skipping header line");
                 reader.skip(1);
             }
@@ -74,7 +76,7 @@ public class CustomerCsvImporter {
         try {
             customerRef = UUID.fromString(row[0]);
         } catch (IllegalArgumentException e){
-            System.out.printf("Invalid UUID. model.Customer reference: \"%s\" - Row not added\n", row[0]);
+            System.out.printf("Invalid Customer reference: \"%s\" - Row not added\n", row[0]);
             return null;
         }
         return new Customer( customerRef, row[1], row[2], row[3], row[4], row[5], row[6], row[7]);

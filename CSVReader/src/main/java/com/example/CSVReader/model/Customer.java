@@ -1,4 +1,4 @@
-package model;
+package com.example.CSVReader.model;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -98,13 +98,13 @@ public class Customer {
         try {
             return objectMapper.writeValueAsString(this);
         } catch (Exception e) {
-            throw new RuntimeException("Error converting model.Customer to JSON", e);
+            throw new RuntimeException("Error converting Customer to JSON", e);
         }
     }
 
     @Override
     public String toString() {
-        return "model.Customer{" +
+        return "Customer{" +
                 "customerRef=" + customerRef +
                 ", customerName='" + customerName + '\'' +
                 ", addressLine1='" + addressLine1 + '\'' +

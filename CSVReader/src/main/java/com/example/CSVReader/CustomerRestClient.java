@@ -1,4 +1,6 @@
-import model.Customer;
+package com.example.CSVReader;
+
+import com.example.CSVReader.model.Customer;
 
 import java.io.IOException;
 import java.net.URI;

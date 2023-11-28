@@ -1,4 +1,4 @@
-package model;
+package com.example.CSVReader.model;
 
 import org.junit.jupiter.api.Test;
 
