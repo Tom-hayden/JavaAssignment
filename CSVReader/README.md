@@ -3,7 +3,7 @@
 
 ## Prerequisites
 
-- Java Development Kit (JDK) 11 or later
+- Java Development Kit (JDK) 17 or later
 - Maven (for building the project)
 
 ## Build Instructions
@@ -22,7 +22,7 @@
 
 ## Running the tool
 
-You will need to run the accompanying `h2Database` project at the same time to connect to the in memory database.
+You will need to run the accompanying [`h2Database`](../H2Database/README.md) project at the same time to connect to the in memory database.
 
 You can run the tool from the command line with the following syntax:
 
@@ -34,7 +34,5 @@ You can run the tool from the command line with the following syntax:
 * -url=\<serviceUrl>: Specify the URL of the database service. (Optional, default: http://localhost:8080/customer)
 
 If you don't provide arguments you will be prompted to specify a location for the csv and the default url will be used.
-
-# Notes
 
 
